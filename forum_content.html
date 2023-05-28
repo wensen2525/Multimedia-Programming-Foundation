@@ -4,32 +4,151 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
+      <title>FORUM CONTENT</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
       <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
-</head>
-<body>
-      <div id="app">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
             
-            <main>
-                  <!-- background masukin ke section, set no repeat, set cover -->
+      <style type="text/css">
+            .overflow-auto {
+                  white-space: pre-wrap;
+            }
+            .font-family{
+                  font-family: 'poppins';
+            }
+            #side_nav{
+                  background: #0F181F;
+                  min-height: 100vh;
+                  max-height: 100vh;
+            }
+
+            .sidebar{
+                  padding-left: 1.5rem;
+                  padding-right: 1.5rem;
+                  border-radius: 0 30px 30px 0;
+            }
+
+            .sidebar_kecil{
+                  padding-left: 0.25rem;
+                  padding-right: 0.25rem;
+            }
+
+            .nav-button{
+                  border-radius: 0 50% 50% 0;
+            }
+
+            .content{
+                  min-height: 100vh;
+                  width: 100%;
+            }
+            .custom-padding{
+                  padding: 3rem;
+            }
+            .bookmark.btn-primary.active{
+                  background-color: #0F181F;
+                  text-align: left;
+                  width: 100%;
+                  height: 100%;
+            }
+            .bi-bookmark-fill{
+                  color:#D9D9D9;
+            }
+            .bi-bookmark-fill.active{
+                  color: #00395C;
+            }
+            .bi-bookmark-fill.dark{
+                  color: #00395C;
+            }
+            .custom-line-spacing {
+                  line-height: 1.8rem;
+            }
+            .custom-image-size {
+                  width: 300px;
+                  height: auto;
+            }
+            .back-button{
+                  background-color: #0F181F;
+                  border-radius: 60px;
+                  padding-inline: 3vh;
+                  position: fixed;
+                  bottom: 0;
+                  right: 0;
+                  margin-bottom: 3rem;
+                  margin-right: 5rem;
+            }
+      </style>
+</head>
+<body class="font-family">
+      <div class="main-container d-flex ">
+            <div class="sticky-top top-0 sidebar py-5 me-2 d-flex flex-column justify-content-between" id="side_nav">
+                  <div>
+                        <div class="header-box mb-4">
+                              <h3 class="fs-4 d-flex align-items-center header-logo nav-list" id="header-logo">
+                                    <span class="text-dark rounded shadow">
+                                          <img src="C:\Semester4\ArtLens\Images\logo.svg" alt="AL" style="width: 40px">
+                                    </span>
+                                    <a class="ps-2 text-white text-header text-decoration-none fw-semibold" href="/navbar.html">
+                                          Artlens
+                                    </a>
+                                    <button class="position-absolute start-100 text-white border-0 nav-button d-flex align-items-center " style="background:#0F181F; transform:translateX(-30%)"><i class="nav-menu fa-solid fa-angles-left fs-6 py-2"></i></button>
+                              </h3>
+      
+                        </div>
+                        <ul class="list-unstyled p-2 nav-list">
+                              <li><a href="./main_tutorial.html" class="text-decoration-none text-white d-flex align-items-center mb-3"><div class="logo-menu" style="width: 40px"><i class="fa-solid fa-graduation-cap"></i></div> <span class="text-menu">Tutorial</span></a></li>
+                              <li><a href="./references.html" class="text-decoration-none text-white d-flex align-items-center mb-3"><div class="logo-menu" style="width: 40px"><i class="fa-solid fa-book"></i></div> <span class="text-menu">References</span></a></li>
+                              <li><a href="./main_forum.html" class="text-decoration-none text-white d-flex align-items-center mb-3"><div class="logo-menu" style="width: 40px"><i class="bi bi-chat-left-text-fill"></i></div> <span class="text-menu">Forum</span></a></li>
+                              <li><a href="./course_track.html" class="text-decoration-none text-white d-flex align-items-center mb-3"><div class="logo-menu" style="width: 40px"><i class="fa-solid fa-chart-column"></i></div> <span class="text-menu">Tracking</span></a></li>
+                        </ul>
+                  </div>
+                  <div class="profile nav-list">
+                        <a href="./profile.html" class="text-decoration-none text-white d-flex align-items-center mb-3 href-profile"><div class="logo-profile" style="width: 45px"><i class="fa-solid fa-user border rounded-5 d-flex justify-content-center align-items-center" id="border-profile" style="width: 30px;height:30px;"></i></div> <span class="text-profile">Mr.Hubert</span></a>
+                        <a href="./login.html" class="btn border rounded-pill block col-12 text-white text-login">Log Out</a>
+                        <a href="./login.html" class="p-2 text-decoration-none text-white logo-login d-none"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                  </div>
+            </div>
+            <main class="content custom-padding">
                   <section>
                         <div class="container">
                               <div class="row">
-                                    <div class="col-12">
-                                          <a class="btn btn-dark mx-3 my-3" href="./home.html">Home</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./login.html">Login</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./register.html">Register</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./course_track.html">Course Track</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./main_forum.html">Main Forum</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./main_tutorial.html">Main Tutorial</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./forum_content.html">Forum Content</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./detail_tutorial.html">Detail Tutorial</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./references.html">References</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./reference_content.html">Reference Content</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./navbar.html">Navbar</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./footer.html">Footer</a>
+                              <!-- forum content  -->
+                              <h1 class="fw-semibold fs-2">FORUM</h1>
+                              <div class="row py-4">
+                                    <div class="col-md-1">
+                                          <div>
+                                                <img class="post-profile rounded-circle" src="C:\Semester4\ArtLens\Images\profile.png">
+                                          </div>
+                                    </div>
+                                          <div class="col-lg-8 ml-auto d-flex align-items-center mt-1 mt-md-0">
+                                                <div class="ms-3">
+                                                    <h1 class="fw-semibold fs-2 m-0">How to setup Photoshop with your Student ID</h1>
+                                                    <p class="fs-6 mb-0">Posted by Christine Hakim  1 hour ago</p>
+                                                </div>
+                                          </div>
+                              </div>
+                              </div>
+                        </div>
+                  </section>
+                  <section>
+                        <div class="container">
+                              <div class="row">
+                                    <div class="col-10 mb-3">
+                                          <ol class="list-unstyled custom-line-spacing">
+                                                <li>This is a comprehensive steps to setup Photoshop with Student ID :
+                                                  <ol>
+                                                    <li>Obtain a valid student ID from your educational institution.</li>
+                                                    <li>Visit the Adobe website and search for the Photoshop Student and Teacher Edition.</li>
+                                                    <li>Click on the "Buy now" button and follow the prompts to create an Adobe account or sign in to an existing one.</li>
+                                                    <li>Enter your student ID information when prompted during the purchase process.</li>
+                                                    <li>Once your purchase is complete, download and install the Photoshop software on your computer. </li>
+                                                  </ol>
+                                                </li>
+                                                <li>It is <strong>important</strong> to ensure that your educational institution is an eligible institution that qualifies for Adobe's student pricing.</li>
+                                          </ol>
                                     </div>
                               </div>
                         </div>
@@ -37,41 +156,101 @@
                   <section>
                         <div class="container">
                               <div class="row">
-                                    <div class="col">
-                                          <!-- content -->
+                                    <div class="col-10">
+                                          <img src="https://images.unsplash.com/photo-1661956600684-97d3a4320e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="rounded float custom-image-size" alt="Image Forum 1">
+                                          <img src="https://images.unsplash.com/photo-1661956601349-f61c959a8fd4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" class="rounded float custom-image-size" alt="Image forum 2">
                                     </div>
                               </div>
                         </div>
                   </section>
                   <section>
                         <div class="container">
-                              <div class="row">
-                                    <div class="col">
-                                          <!-- content -->
-                                    </div>
-                              </div>
-                        </div>
-                  </section>
-                  <section>
-                        <div class="container">
-                              <div class="row">
-                                    <div class="col">
-                                          <!-- content -->
-                                    </div>
-                              </div>
-                        </div>
-                  </section>
-                  <section>
-                        <div class="container">
-                              <div class="row">
-                                    <div class="col">
-                                          <!-- content -->
-                                    </div>
-                              </div>
+                              <a href="./main_forum_page.html" type="button" class="btn btn-dark back-button">Back to Forum</a>
                         </div>
                   </section>
             </main>
-            
       </div>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script
+  src="https://code.jquery.com/jquery-3.7.0.js"
+  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+  crossorigin="anonymous"></script>
+      <script>
+            $(document).ready(function() {
+                  $(".bi-bookmark-fill").click(function() {
+                        $(this).toggleClass("active");
+                        if ($(this).hasClass("active")) {
+                              $(this).addClass("dark");
+                        } else {
+                        $(this).removeClass("dark");
+                  }
+                  });
+            });
+
+
+            $(document).ready(function () {
+                  let open = true;
+                  const activePage = window.location.pathname;
+                  const navLinks = document.querySelectorAll('.nav-list a')
+                  .forEach(e => {
+            
+                        if(e.href.includes(activePage) && e.href == 'http://127.0.0.1:8000/profile'){
+                              e.classList.remove('text-white');
+                              e.classList.add('text-warning');
+                              $('#border-profile').addClass('border-warning');
+                        }else if(e.href.includes(activePage)){
+                              e.classList.remove('text-white');
+                              e.classList.add('text-warning');
+                              $('#border-profile').removeClass('border-warning');
+                        }
+                  });
+
+                  $('.nav-menu').on('click', function(){
+                        if(open == true){
+                              open = false;
+                              $('#side_nav').removeClass('sidebar');
+                              $('#side_nav').addClass('sidebar_kecil');
+                              $('#side_nav').css('transition', 'all 0.5s ease-in');
+
+                              $('.nav-menu').css('transform', 'rotate(180deg)');
+
+                              $('.text-header').css('display', 'none');
+                              $('.text-menu').css('display', 'none');
+                              $('.text-profile').css('display', 'none');
+                              $('.text-login').css('display', 'none');
+
+                              $('.logo-menu').css('text-align', 'center');
+                              $('.header-logo').addClass('justify-content-center');
+                              $('.logo-profile').addClass('d-flex justify-content-center');
+                              $('.profile').addClass('d-flex flex-column align-items-center');
+                              $('.logo-login').removeClass('d-none');
+                              $('.logo-login').addClass('d-flex justify-content-center');
+                        }else{
+                              open = true;
+                              $('#side_nav').removeClass('sidebar_kecil');
+                              $('#side_nav').addClass('sidebar');
+                              // $('#side_nav').css('transition', 'all 0.5s ease-in');
+
+                              $('.nav-menu').css('transform', 'rotate(0deg)');
+
+                              $('.text-header').css('display', 'block');
+                              $('.text-menu').css('display', 'block');
+                              $('.text-profile').css('display', 'block');
+                              $('.text-login').css('display', 'block');
+
+                              $('.logo-menu').css('text-align', 'start');
+                              $('.header-logo').removeClass('justify-content-center');
+                              $('.logo-profile').removeClass('d-flex justify-content-center');
+                              $('.profile').removeClass('d-flex flex-column align-items-center');
+                              $('.logo-login').removeClass('d-flex justify-content-center');
+                              $('.logo-login').addClass('d-none');
+
+                        }
+                  });
+                  
+            });
+      </script>
 </body>
 </html>
