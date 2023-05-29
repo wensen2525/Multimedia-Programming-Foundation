@@ -14,12 +14,11 @@
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
             
       <style type="text/css">
-            .overflow-auto {
-                  white-space: pre-wrap;
+            body{
+                  font-family: 'Poppins', sans-serif;
             }
-            .font-family{
-                  font-family: 'poppins';
-            }
+
+
             #side_nav{
                   background: #0F181F;
                   min-height: 100vh;
@@ -45,9 +44,7 @@
                   min-height: 100vh;
                   width: 100%;
             }
-            .custom-padding{
-                  padding : 3rem;
-            }
+
             .shape{
                   background-color: #00395C;
                   width: 4rem;
@@ -75,6 +72,24 @@
             }
             .bi-bookmark-fill.dark{
                   color: #00395C;
+            }
+
+            .custom-line-spacing {
+                  line-height: 1.8rem;
+            }
+            .custom-image-size {
+                  width: 300px;
+                  height: auto;
+            }
+            .back-button{
+                  background-color: #0F181F;
+                  border-radius: 60px;
+                  padding-inline: 3vh;
+                  position: fixed;
+                  bottom: 0;
+                  right: 0;
+                  margin-bottom: 3rem;
+                  margin-right: 5rem;
             }
       </style>
 </head>
@@ -107,10 +122,10 @@
                         <a href="./login.html" class="p-2 text-decoration-none text-white logo-login d-none"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                   </div>
             </div>
-            <main class="content custom-padding">
+            <main class="content" style="padding: 0 2rem;">
                   <section>
                         <div class="container">
-                                    <div class="row">
+                                    <div class="row mt-4">
                                           <div class="d-flex justify-content-between align-items-center">
                                                 <h1 class="fw-semibold fs-2">FORUM</h1>
                                                       <form class="d-flex" role="search">
@@ -264,80 +279,77 @@
   src="https://code.jquery.com/jquery-3.7.0.js"
   integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
   crossorigin="anonymous"></script>
-      <script>
-            $(document).ready(function() {
-                  $(".bi-bookmark-fill").click(function() {
-                        $(this).toggleClass("active");
-                        if ($(this).hasClass("active")) {
-                              $(this).addClass("dark");
-                        } else {
-                        $(this).removeClass("dark");
+  <script>
+      $(document).ready(function () {
+            let open = true;
+            const activePage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-list a')
+            .forEach(e => {
+      
+                  if(e.href.includes(activePage) && e.href == 'http://127.0.0.1:8000/profile'){
+                        e.classList.remove('text-white');
+                        e.classList.add('text-warning');
+                        $('#border-profile').addClass('border-warning');
+                  }else if(e.href.includes(activePage)){
+                        e.classList.remove('text-white');
+                        e.classList.add('text-warning');
+                        $('#border-profile').removeClass('border-warning');
                   }
-                  });
             });
 
+            $(".bi-bookmark-fill").click(function() {
+                  $(this).toggleClass("active");
+                  if ($(this).hasClass("active")) {
+                        $(this).addClass("dark");
+                  } else {
+                  $(this).removeClass("dark");
+                  }
+            });
 
-            $(document).ready(function () {
-                  let open = true;
-                  const activePage = window.location.pathname;
-                  const navLinks = document.querySelectorAll('.nav-list a')
-                  .forEach(e => {
+            $('.nav-menu').on('click', function(){
+                  if(open == true){
+                        open = false;
+                        $('#side_nav').removeClass('sidebar');
+                        $('#side_nav').addClass('sidebar_kecil');
+                        $('#side_nav').css('transition', 'all 0.5s ease-in');
+
+                        $('.nav-menu').css('transform', 'rotate(180deg)');
+
+                        $('.text-header').css('display', 'none');
+                        $('.text-menu').css('display', 'none');
+                        $('.text-profile').css('display', 'none');
+                        $('.text-login').css('display', 'none');
+
+                        $('.logo-menu').css('text-align', 'center');
+                        $('.header-logo').addClass('justify-content-center');
+                        $('.logo-profile').addClass('d-flex justify-content-center');
+                        $('.profile').addClass('d-flex flex-column align-items-center');
+                        $('.logo-login').removeClass('d-none');
+                        $('.logo-login').addClass('d-flex justify-content-center');
+                  }else{
+                        open = true;
+                        $('#side_nav').removeClass('sidebar_kecil');
+                        $('#side_nav').addClass('sidebar');
+                        // $('#side_nav').css('transition', 'all 0.5s ease-in');
+
+                        $('.nav-menu').css('transform', 'rotate(0deg)');
+
+                        $('.text-header').css('display', 'block');
+                        $('.text-menu').css('display', 'block');
+                        $('.text-profile').css('display', 'block');
+                        $('.text-login').css('display', 'block');
+
+                        $('.logo-menu').css('text-align', 'start');
+                        $('.header-logo').removeClass('justify-content-center');
+                        $('.logo-profile').removeClass('d-flex justify-content-center');
+                        $('.profile').removeClass('d-flex flex-column align-items-center');
+                        $('.logo-login').removeClass('d-flex justify-content-center');
+                        $('.logo-login').addClass('d-none');
+
+                  }
+            });
             
-                        if(e.href.includes(activePage) && e.href == 'http://127.0.0.1:8000/profile'){
-                              e.classList.remove('text-white');
-                              e.classList.add('text-warning');
-                              $('#border-profile').addClass('border-warning');
-                        }else if(e.href.includes(activePage)){
-                              e.classList.remove('text-white');
-                              e.classList.add('text-warning');
-                              $('#border-profile').removeClass('border-warning');
-                        }
-                  });
-
-                  $('.nav-menu').on('click', function(){
-                        if(open == true){
-                              open = false;
-                              $('#side_nav').removeClass('sidebar');
-                              $('#side_nav').addClass('sidebar_kecil');
-                              $('#side_nav').css('transition', 'all 0.5s ease-in');
-
-                              $('.nav-menu').css('transform', 'rotate(180deg)');
-
-                              $('.text-header').css('display', 'none');
-                              $('.text-menu').css('display', 'none');
-                              $('.text-profile').css('display', 'none');
-                              $('.text-login').css('display', 'none');
-
-                              $('.logo-menu').css('text-align', 'center');
-                              $('.header-logo').addClass('justify-content-center');
-                              $('.logo-profile').addClass('d-flex justify-content-center');
-                              $('.profile').addClass('d-flex flex-column align-items-center');
-                              $('.logo-login').removeClass('d-none');
-                              $('.logo-login').addClass('d-flex justify-content-center');
-                        }else{
-                              open = true;
-                              $('#side_nav').removeClass('sidebar_kecil');
-                              $('#side_nav').addClass('sidebar');
-                              // $('#side_nav').css('transition', 'all 0.5s ease-in');
-
-                              $('.nav-menu').css('transform', 'rotate(0deg)');
-
-                              $('.text-header').css('display', 'block');
-                              $('.text-menu').css('display', 'block');
-                              $('.text-profile').css('display', 'block');
-                              $('.text-login').css('display', 'block');
-
-                              $('.logo-menu').css('text-align', 'start');
-                              $('.header-logo').removeClass('justify-content-center');
-                              $('.logo-profile').removeClass('d-flex justify-content-center');
-                              $('.profile').removeClass('d-flex flex-column align-items-center');
-                              $('.logo-login').removeClass('d-flex justify-content-center');
-                              $('.logo-login').addClass('d-none');
-
-                        }
-                  });
-                  
-            });
-      </script>
+      });
+</script>
 </body>
 </html>
