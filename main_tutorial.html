@@ -1,62 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
+      <title>MAIN TUTORIAL</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
       <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
-</head>
-<body>
-      <div id="app">
+      <link rel="stylesheet" href="https://unpkg.com/@splidejs/splide@3.0.6/dist/css/splide.min.css"> <!---->
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
             
-            <main>
-                  <!-- background masukin ke section, set no repeat, set cover -->
+      <style type="text/css">
+            .overflow-auto {
+                  white-space: pre-wrap;
+            }
+            .font-family{
+                  font-family: 'poppins';
+            }
+            p{
+                  font-size: 20px;
+            }
+            #side_nav{
+                  background: #0F181F;
+                  min-height: 100vh;
+                  max-height: 100vh;
+            }
+
+            .sidebar{
+                  padding-left: 1.5rem;
+                  padding-right: 1.5rem;
+                  border-radius: 0 30px 30px 0;
+            }
+
+            .sidebar_kecil{
+                  padding-left: 0.25rem;
+                  padding-right: 0.25rem;
+            }
+
+            .nav-button{
+                  border-radius: 0 50% 50% 0;
+            }
+
+            .content{
+                  min-height: 100vh;
+                  width: 100%;
+            }
+            .custom-padding{
+                  padding: 3rem;
+            }
+            .carousel-padding{
+                  padding: 3rem 10rem 3rem 10rem;
+            }
+            .bookmark.btn-primary.active{
+                  background-color: #0F181F;
+                  text-align: left;
+                  width: 100%;
+                  height: 100%;
+            }
+            .bi-bookmark-fill{
+                  color:#D9D9D9;
+            }
+            .bi-bookmark-fill.active{
+                  color: #00395C;
+            }
+            .bi-bookmark-fill.dark{
+                  color: #00395C;
+            }
+            .custom-line-spacing {
+                  line-height: 1.8rem;
+            }
+            .custom-image-size {
+                  width: 300px;
+                  height: auto;
+            }
+            .back-button{
+                  background-color: #0F181F;
+                  border-radius: 60px;
+                  padding-inline: 3vh;
+                  position: fixed;
+                  bottom: 0;
+                  right: 0;
+                  margin-bottom: 3rem;
+                  margin-right: 5rem;
+            }
+            .custom-border{
+                border-color: #70A4C8 !important;
+            }
+
+
+            .container {
+                  width: 100%;
+            }
+            .panel-container {
+                  margin-bottom: 30px;
+            }
+            .panel-container .panel-header.expanded {
+                  border-radius: 10px 10px 0px 0px;
+            }
+            .panel-header {
+                  background: #00395C;
+                  margin-top: 0px;
+                  border-radius: 10px;
+                  overflow: hidden;
+            }
+            .panel-header p {
+                  /* float: left; */
+                  margin: 15px 15px 15px 25px;
+                  color: white;
+                  
+            }
+            .panel-header button{
+                  float: right;
+                  margin: 15px;
+            }
+            .panel {
+                  display: none;
+                  border: 2px solid #70A4C8;
+                  border-radius: 0px 0px 10px 10px;
+                  border-top-color: #00395C;
+            }
+            .panel p {
+                  margin: 10px 10px 10px 25px;
+            }
+            .dropDownBtn {
+                  border: none;
+                  background: none;
+                  color: white;
+                  transition: transform 0.5s ease-in-out;
+            }
+            .droppedDown {
+                  /* transform: rotate(180deg); */
+                  transform: scaleY(-1);
+            }
+
+            .splide{
+                  padding: 0px 60px 0px 60px;
+                  margin: 60px;
+            }
+            .splide__track {
+                  border-radius: 10px;
+            }
+            .splide__slide img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+            }
+            .splide__arrow {
+                  background: none;
+            }
+
+      </style>
+</head>
+
+<body class="font-family">
+      <div class="main-container d-flex ">
+            <div class="sticky-top top-0 sidebar py-5 me-2 d-flex flex-column justify-content-between" id="side_nav">
+                  <div>
+                        <div class="header-box mb-4">
+                              <h3 class="fs-4 d-flex align-items-center header-logo nav-list" id="header-logo">
+                                    <span class="text-dark rounded shadow">
+                                          <img src="logo.svg" alt="AL" style="width: 40px">
+                                    </span>
+                                    <a class="ps-2 text-white text-header text-decoration-none fw-semibold" href="/navbar.html">
+                                          Artlens
+                                    </a>
+                                    <button class="position-absolute start-100 text-white border-0 nav-button d-flex align-items-center " style="background:#0F181F; transform:translateX(-30%)"><i class="nav-menu fa-solid fa-angles-left fs-6 py-2"></i></button>
+                              </h3>
+      
+                        </div>
+                        <ul class="list-unstyled p-2 nav-list">
+                              <li><a href="./main_tutorial.html" class="text-decoration-none text-white d-flex align-items-center mb-3"><div class="logo-menu" style="width: 40px"><i class="fa-solid fa-graduation-cap"></i></div> <span class="text-menu">Tutorial</span></a></li>
+                              <li><a href="./references.html" class="text-decoration-none text-white d-flex align-items-center mb-3"><div class="logo-menu" style="width: 40px"><i class="fa-solid fa-book"></i></div> <span class="text-menu">References</span></a></li>
+                              <li><a href="./main_forum.html" class="text-decoration-none text-white d-flex align-items-center mb-3"><div class="logo-menu" style="width: 40px"><i class="bi bi-chat-left-text-fill"></i></div> <span class="text-menu">Forum</span></a></li>
+                              <li><a href="./course_track.html" class="text-decoration-none text-white d-flex align-items-center mb-3"><div class="logo-menu" style="width: 40px"><i class="fa-solid fa-chart-column"></i></div> <span class="text-menu">Tracking</span></a></li>
+                        </ul>
+                  </div>
+                  <div class="profile nav-list">
+                        <a href="./profile.html" class="text-decoration-none text-white d-flex align-items-center mb-3 href-profile"><div class="logo-profile" style="width: 45px"><i class="fa-solid fa-user border rounded-5 d-flex justify-content-center align-items-center" id="border-profile" style="width: 30px;height:30px;"></i></div> <span class="text-profile">Mr.Hubert</span></a>
+                        <a href="./login.html" class="btn border rounded-pill block col-12 text-white text-login">Log Out</a>
+                        <a href="./login.html" class="p-2 text-decoration-none text-white logo-login d-none"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                  </div>
+            </div>
+            <main class="content custom-padding">
                   <section>
                         <div class="container">
                               <div class="row">
-                                    <div class="col-12">
-                                          <a class="btn btn-dark mx-3 my-3" href="./home.html">Home</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./login.html">Login</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./register.html">Register</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./course_track.html">Course Track</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./main_forum.html">Main Forum</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./main_tutorial.html">Main Tutorial</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./forum_content.html">Forum Content</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./detail_tutorial.html">Detail Tutorial</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./references.html">References</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./reference_content.html">Reference Content</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./navbar.html">Navbar</a>
-                                          <a class="btn btn-primary mx-3 my-3" href="./footer.html">Footer</a>
+                                    <div class="col">
+                                          <h1 class="fw-semibold fs-1">Introduction to Adobe Photoshop</h1>
+                                          <div class="col-1 border custom-border border-2 "></div>
+                                    </div>                                    
+                              </div>
+
+                              <section id="image-carousel" class="splide" aria-label="lessoncards">
+                                    <div class="splide__track">
+                                          <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                      <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fHww&w=1000&q=80" alt="">
+                                                </li>
+                                                <li class="splide__slide">
+                                                      <img src="https://i.seadn.io/gae/2hDpuTi-0AMKvoZJGd-yKWvK4tKdQr_kLIpB_qSeMau2TNGCNidAosMEvrEXFO9G6tmlFlPQplpwiqirgrIPWnCKMvElaYgI-HiVvXc" class="d-block w-100" alt="">
+                                                </li>
+                                                <li class="splide__slide">
+                                                      <img src="https://pbs.twimg.com/media/E8NRbc6XsAEoG6S?format=jpg&name=large" alt="">
+                                                </li>
+                                          </ul>
                                     </div>
+                              </section>
+
+                              <div>
+                                    <p style="text-align: justify; margin-bottom: 50px;">
+                                          This page will include tips and tricks for getting the most out of Photoshop, such as using keyboard shortcuts and adjusting layer properties. The goal of an introduction to Photoshop tutorial is to provide a foundation for users to begin exploring the software and experimenting with their own image editing projects.
+                                    </p>
                               </div>
                         </div>
                   </section>
                   <section>
                         <div class="container">
                               <div class="row">
-                                    <div class="col">
-                                          <!-- content -->
+                                    <div class="col" style="margin-right: 15px;">
+                                          <div class="panel-container">
+                                                <div class="panel-header">
+                                                      <p class="fw-semibold" style="display:inline-flex">Canvas Setup</p>
+                                                      <button type="button" class="dropDownBtn">
+                                                            <img src="storage/images/expand.svg" alt="dropdown">
+                                                      </button>
+                                                </div>
+                                                <div class="panel">
+                                                      <p>Cavnas Size</p>
+                                                      <p>Color Mode</p>
+                                                      <p>DPI</p>
+                                                </div>
+                                          </div>
+                                          <div class="panel-container">
+                                                <div class="panel-header">
+                                                      <p class="fw-semibold" style="display:inline-flex">Transform</p>
+                                                      <button type="button" class="dropDownBtn">
+                                                            <img src="storage/images/expand.svg" alt="dropdown">
+                                                      </button>
+                                                </div>
+                                                <div class="panel">
+                                                      <p>Distort</p>
+                                                      <p>Perspective</p>
+                                                </div>
+                                          </div>
+                                          <div class="panel-container">
+                                                <div class="panel-header">
+                                                      <p class="fw-semibold" style="display:inline-flex">Image Color Adjustment</p>
+                                                      <button type="button" class="dropDownBtn">
+                                                            <img src="storage/images/expand.svg" alt="dropdown">
+                                                      </button>
+                                                </div>
+                                                <div class="panel">
+                                                      <p>Brightness & Contrast</p>
+                                                      <p>Hue Saturation Luminance (HSL)</p>
+                                                      <p>Color Balance</p>
+                                                </div>
+                                          </div>
+                                          <div class="panel-container">
+                                                <div class="panel-header">
+                                                      <p class="fw-semibold" style="display:inline-flex">Pen Tools</p>
+                                                      <button type="button" class="dropDownBtn">
+                                                            <img src="storage/images/expand.svg" alt="dropdown">
+                                                      </button>
+                                                </div>
+                                                <div class="panel">
+                                                      <p>Anchor Points</p>
+                                                      <p>Curvatures</p>
+                                                </div>
+                                          </div>
                                     </div>
-                              </div>
-                        </div>
-                  </section>
-                  <section>
-                        <div class="container">
-                              <div class="row">
-                                    <div class="col">
-                                          <!-- content -->
-                                    </div>
-                              </div>
-                        </div>
-                  </section>
-                  <section>
-                        <div class="container">
-                              <div class="row">
-                                    <div class="col">
-                                          <!-- content -->
+                                    <div class="col" style="margin-left: 15px;">
+                                          <div class="panel-container">
+                                                <div class="panel-header">
+                                                      <p class="fw-semibold" style="display:inline-flex">Color Palette</p>
+                                                      <button type="button" class="dropDownBtn">
+                                                            <img src="storage/images/expand.svg" alt="dropdown">
+                                                      </button>
+                                                </div>
+                                                <div class="panel">
+                                                      <p>Color Theory</p>
+                                                      <p>Gradient Maps</p>
+                                                </div>
+                                          </div>
+                                          <div class="panel-container">
+                                                <div class="panel-header">
+                                                      <p class="fw-semibold" style="display:inline-flex">Masking</p>
+                                                      <button type="button" class="dropDownBtn">
+                                                            <img src="storage/images/expand.svg" alt="dropdown">
+                                                      </button>
+                                                </div>
+                                                <div class="panel">
+                                                      <p>Masking Tools</p>
+                                                      <p>Clipping Mask</p>
+                                                      <p>Nested Masks</p>
+                                                </div>
+                                          </div>
+                                          <div class="panel-container">
+                                                <div class="panel-header">
+                                                      <p class="fw-semibold" style="display:inline-flex">Selection Tools</p>
+                                                      <button type="button" class="dropDownBtn">
+                                                            <img src="storage/images/expand.svg" alt="dropdown">
+                                                      </button>
+                                                </div>
+                                                <div class="panel">
+                                                      <p>Standard Selection</p>
+                                                      <p>Lasso Tools</p>
+                                                      <p>Color Range Selection</p>
+                                                </div>
+                                          </div>
+                                          <div class="panel-container">
+                                                <div class="panel-header">
+                                                      <p class="fw-semibold" style="display:inline-flex">Filter Gallery</p>
+                                                      <button type="button" class="dropDownBtn">
+                                                            <img src="storage/images/expand.svg" alt="dropdown">
+                                                      </button>
+                                                </div>
+                                                <div class="panel">
+                                                      <p>Smart Filters</p>
+                                                      <p>Blur</p>
+                                                      <p>Distort</p>
+                                                      <p>Noise</p>
+                                                </div>
+                                          </div>
                                     </div>
                               </div>
                         </div>
@@ -73,5 +342,124 @@
             </main>
             
       </div>
+      
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script
+  src="https://code.jquery.com/jquery-3.7.0.js"
+  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+  crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/@splidejs/splide@3.0.6/dist/js/splide.min.js"></script>    <!---->
+
+      
+      <script>
+            $(document).ready(function() {
+                  $(".bi-bookmark-fill").click(function() {
+                        $(this).toggleClass("active");
+                        if ($(this).hasClass("active")) {
+                              $(this).addClass("dark");
+                        } else {
+                        $(this).removeClass("dark");
+                  }
+                  });
+            });
+
+
+            $(document).ready(function () {
+                  let open = true;
+                  const activePage = window.location.pathname;
+                  const navLinks = document.querySelectorAll('.nav-list a')
+                  .forEach(e => {
+            
+                        if(e.href.includes(activePage) && e.href == 'http://127.0.0.1:8000/profile'){
+                              e.classList.remove('text-white');
+                              e.classList.add('text-warning');
+                              $('#border-profile').addClass('border-warning');
+                        }else if(e.href.includes(activePage)){
+                              e.classList.remove('text-white');
+                              e.classList.add('text-warning');
+                              $('#border-profile').removeClass('border-warning');
+                        }
+                  });
+
+                  $('.nav-menu').on('click', function(){
+                        if(open == true){
+                              open = false;
+                              $('#side_nav').removeClass('sidebar');
+                              $('#side_nav').addClass('sidebar_kecil');
+                              $('#side_nav').css('transition', 'all 0.5s ease-in');
+
+                              $('.nav-menu').css('transform', 'rotate(180deg)');
+
+                              $('.text-header').css('display', 'none');
+                              $('.text-menu').css('display', 'none');
+                              $('.text-profile').css('display', 'none');
+                              $('.text-login').css('display', 'none');
+
+                              $('.logo-menu').css('text-align', 'center');
+                              $('.header-logo').addClass('justify-content-center');
+                              $('.logo-profile').addClass('d-flex justify-content-center');
+                              $('.profile').addClass('d-flex flex-column align-items-center');
+                              $('.logo-login').removeClass('d-none');
+                              $('.logo-login').addClass('d-flex justify-content-center');
+                        }else{
+                              open = true;
+                              $('#side_nav').removeClass('sidebar_kecil');
+                              $('#side_nav').addClass('sidebar');
+                              // $('#side_nav').css('transition', 'all 0.5s ease-in');
+
+                              $('.nav-menu').css('transform', 'rotate(0deg)');
+
+                              $('.text-header').css('display', 'block');
+                              $('.text-menu').css('display', 'block');
+                              $('.text-profile').css('display', 'block');
+                              $('.text-login').css('display', 'block');
+
+                              $('.logo-menu').css('text-align', 'start');
+                              $('.header-logo').removeClass('justify-content-center');
+                              $('.logo-profile').removeClass('d-flex justify-content-center');
+                              $('.profile').removeClass('d-flex flex-column align-items-center');
+                              $('.logo-login').removeClass('d-flex justify-content-center');
+                              $('.logo-login').addClass('d-none');
+
+                        }
+                  });
+
+                  $(".panel-header button").on("click", function() {
+                        var $this = $(this);
+                        var $panelHeader = $this.closest('.panel-header');
+                        var $panel = $panelHeader.next('.panel');
+                        var isExpanded = $panelHeader.hasClass('expanded');
+                        
+                        if(isExpanded === true){
+                              $panel.slideUp();
+                              setTimeout(function(){
+                                    $panelHeader.removeClass('expanded');
+                              }, 400);
+                        }
+                        else{
+                              $panel.slideDown();
+                              $panelHeader.addClass('expanded');
+                        }
+                  });
+                  $(".dropDownBtn").on("click", function() {
+                        var $this = $(this);
+                        $this.toggleClass('droppedDown');
+                  });
+            });
+
+            document.addEventListener( 'DOMContentLoaded', function () {
+                  new Splide( '#image-carousel', {
+                        heightRatio: 0.4,
+                        type: 'slide',
+                        perPage: 1,
+                        autoplay: true,
+                        interval: 5000,
+                        type: 'loop',
+                  }).mount();
+            });
+      </script>
+      
 </body>
 </html>
