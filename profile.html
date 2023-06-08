@@ -5,12 +5,18 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Profile</title>
-      <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
       <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
-      <style>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+      <style type="text/css">
+            body{
+                  font-family: 'Poppins', sans-serif;
+            }
+
 
             #side_nav{
                   background: #0F181F;
@@ -22,6 +28,7 @@
                   padding-left: 1.5rem;
                   padding-right: 1.5rem;
                   border-radius: 0 30px 30px 0;
+                  margin-right: 80px;
             }
 
             .sidebar_kecil{
@@ -32,62 +39,198 @@
             .nav-button{
                   border-radius: 0 50% 50% 0;
             }
+
+            .content{
+                  min-height: 100vh;
+                  width: 100%;
+            }
+
+            .shape{
+                  background-color: #00395C;
+                  width: 4rem;
+                  height: 100%;
+                  float: left;
+            }
+            .bookmark.btn-primary.active{
+                  background-color: #0F181F;
+                  text-align: left;
+                  width: 100%;
+                  height: 100%;
+            }
+            .bg-custom{
+                  background-color: #0F181F;
+            }
+            .list-group-item:hover{
+                  background-color: #00395C;
+                  transition: ease-in-out 600ms;
+            }
+            .bi-bookmark-fill{
+                  color:#D9D9D9;
+            }
+            .bi-bookmark-fill.active{
+                  color: #00395C;
+            }
+            .bi-bookmark-fill.dark{
+                  color: #00395C;
+            }
+
+            .custom-line-spacing {
+                  line-height: 1.8rem;
+            }
+            .custom-image-size {
+                  width: 300px;
+                  height: auto;
+            }
+            .back-button{
+                  background-color: #0F181F;
+                  border-radius: 60px;
+                  padding-inline: 3vh;
+                  position: fixed;
+                  bottom: 0;
+                  right: 0;
+                  margin-bottom: 3rem;
+                  margin-right: 5rem;
+            }
+
             .title{
-                  position: absolute;
+                  position: relative;
                   width: 203px;
                   height: 96px;
-                  left: 183px;
+                  /* margin-left: 80px; */
                   top: 60px;
 
-                  font-family: 'Poppins';
                   font-style: normal;
                   font-weight: 600;
                   font-size: 64px;
                   line-height: 96px;
-                  /* identical to box height */
 
 
                   color: #000000;
 
             }
 
+            .oetama{
+                  display: flex;
+                  flex-direction: row;
+                  padding-top: 80px;
+            }
+
             .prof-header{
-                  position: absolute;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: flex-end;
+                  position: relative;
                   width: 1166px;
                   height: 385px;
-                  left: 183px;
-                  top: 184px;
+                  /* margin-left: 80px; */
+                  padding-left: 15px;
+                  /* margin-top: 80px; */
 
                   background: url(.jpg);
                   border-radius: 10px;
+                  background-color: darkblue;
+                  color: #ffffff;
             }
 
             .prof-pic{
-                  position: absolute;
+                  position: relative;
                   width: 381px;
                   height: 254px;
-                  left: 208px;
-                  top: 365px;
+                  
+                  
+                  top: 50px;
 
                   background: url(pfpic.png);
+                  /* background-attachment: fixed; */
                   background-position: center;
                   background-size: auto;
                   background-repeat: no-repeat;
                   border-radius: 149.5px;
             }
 
-            .about-me{
-                  position: absolute;
+            .user-info{
+                  margin-left: 24px;
+                  display: flex;
+                  flex-direction: column;
+            }
+
+            .about-me, .learning-progress{
+                  position: relative;
                   width: 1166px;
-                  height: 355px;
-                  left: 183px;
-                  top: 650px;
-                  background-color: #70A4C8;
+                  height: auto;
+                  margin-top: 80px;
+                  padding: 60px 0 60px 60px;
+                  border: solid 1px #70a4C8;
+                  border-radius: 10px;
+                  background-color: #70a4c8a3;
+            }
+
+            .learning-progress{
+                  padding-left: 0;
+                  margin-bottom: 80px;
+            }
+
+            .about-text{
+                  width: 480px;
+                  height: 180px;
+                  background-color: #70a3c800;
+                  border: solid 1px #00395C;
+                  border-radius: 5px;
+                  padding: 10px;
+            }
+            .progress-cards{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-around;
+            }
+            .card{
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: space-around;
+
+                  border: solid 1px #00395C;
+                  border-radius: 20px;
+
+                  background-color: rgba(162, 209, 241, 0);
+
+                  width: 290px;
+                  height: 410px;
+
+            }
+
+            .shape{
+                  background-color: #00395C;
+                  width: 4rem;
+                  height: 100%;
+                  float: left;
+            }
+            .bookmark.btn-primary.active{
+                  background-color: #0F181F;
+                  text-align: left;
+                  width: 100%;
+                  height: 100%;
+            }
+            .bg-custom{
+                  background-color: #0F181F;
+            }
+            .list-group-item:hover{
+                  background-color: #00395C;
+                  transition: ease-in-out 600ms;
+            }
+            .bi-bookmark-fill{
+                  color:#D9D9D9;
+            }
+            .bi-bookmark-fill.active{
+                  color: #00395C;
+            }
+            .bi-bookmark-fill.dark{
+                  color: #00395C;
             }
       </style>
 </head>
 <body>
-      <div id="main-container d-flex">
+      <div class="main-container d-flex ">
             <div class="sticky-top top-0 sidebar py-5 me-2 d-flex flex-column justify-content-between" id="side_nav">
                   <div>
                         <div class="header-box mb-4">
@@ -115,53 +258,87 @@
                         <a href="./login.html" class="p-2 text-decoration-none text-white logo-login d-none"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                   </div>
             </div>
-            <main class="content" style="padding: 0 2rem">
-                  <!-- background masukin ke section, set no repeat, set cover -->
+            <main class="content " style="padding: 0 2rem;">
                   <section>
-                        <div class="container">
-                              <div class="row">
-                                    <div class="col">
-                                          <!-- content -->
-                                          <h1 class="title">Profile</h1>
+                        <h1 class="title">Profile</h1>
+                        <div class="oetama">
+                              <div>
+                                    <div class="prof-header">
+                                          <img class="prof-pic"/>
+                                          <div class="user-info">
+                                                <h2 class="username">Hubertus Alvito Koesno</h2>
+                                                <span class="role">Graphic Designer</span>
+                                                <span class="share">Share</span>
+                                          </div>
                                     </div>
-                              </div>
-                        </div>
-                  </section>
-                  <section>
-                        <div class="container">
-                              <div class="row">
-                                    <div class="col">
-                                          <img class="prof-header" />
-                                          <img class="prof-pic" />
-                                          <!-- content -->
+                                    <div class="about-me">
+                                          <div>
+                                                <h2>About Me</h2>
+                                                <span></span>
+                                          </div>
+                                          <textarea class="about-text" placeholder="Type Here..."></textarea>
                                     </div>
-                              </div>
-                        </div>
-                  </section>
-                  <section>
-                        <div class="container">
-                              <div class="row">
-                                    <div class="col">
-                                          <div class="about-me">
-
+                                    <div class="learning-progress">
+                                          <h2 style="margin-left: 50px;">Learning Progress</h2>
+                                          <div class="progress-cards">
+                                                <div class="card">
+                                                      <h3 class="count">0</h3>
+                                                      <span class="icon"></span>
+                                                      <h3 class="desc">Course Completed</h3>
+                                                </div>
+                                                <div class="card">
+                                                      <h3 class="count">0</h3>
+                                                      <span class="icon"></span>
+                                                      <h3 class="desc">Track Completed</h3>
+                                                </div>
+                                                <div class="card">
+                                                      <h3 class="count">0</h3>
+                                                      <span class="icon"></span>
+                                                      <h3 class="desc">XP Earned</h3>
+                                                </div>
                                           </div>
                                           
-                                          <!-- content -->
                                     </div>
                               </div>
-                        </div>
-                  </section>
-                  <section>
-                        <div class="container">
-                              <div class="row">
-                                    <div class="col">
-                                          <!-- content -->
+                              <div class="col-4">
+                                    <div class="card w-80 mb-3 text-light bg-custom" style="margin-left: 40px;">
+                                          <div class="card-body mt-4 mb-4 mx-2">
+                                                <ul class="list-group list-group-flush">
+                                                      <h5 class="card-title fw-semibold text-center mb-4">Popular Thread</h5>
+                                                      <a class="text-decoration-none" href="./forum_content.html">
+                                                            <li class="list-group-item d-flex align-items-center rounded border-0 text-light bg-custom my-2">
+                                                                  <img class="col-2 post-profile rounded-circle" src="C:\Semester4\ArtLens\Images\profile.png">
+                                                                  <div class="ms-3">
+                                                                        <p class="m-0 fw-semibold">How to blend better?</p>
+                                                                        <p class="fs-6 mb-0">KIM SO HYUN</p>
+                                                                  </div>
+                                                            </li>
+                                                      </a>
+                                                      <a class="text-decoration-none" href="./forum_content.html">
+                                                            <li class="list-group-item d-flex align-items-center rounded border-0 text-light bg-custom my-2">
+                                                                  <img class="col-2 post-profile rounded-circle" src="C:\Semester4\ArtLens\Images\profile.png">
+                                                                  <div class="ms-3">
+                                                                        <p class="m-0 fw-semibold">What best color for this ?</p>
+                                                                        <p class="fs-6 mb-0">Moon Junhui</p>
+                                                                  </div>
+                                                            </li>
+                                                      </a>
+                                                      <a class="text-decoration-none" href="./forum_content.html">
+                                                            <li class="list-group-item d-flex align-items-center rounded border-0 text-light bg-custom my-2">
+                                                            <img class="col-2 post-profile rounded-circle" src="C:\Semester4\ArtLens\Images\profile.png">
+                                                            <div class="ms-3">
+                                                                  <p class="m-0 fw-semibold">How to create linear Color</p>
+                                                                  <p class="fs-6 mb-0">Bang Asep</p>
+                                                            </div>
+                                                            </li>
+                                                      </a>
+                                                </ul>
+                                          </div>
                                     </div>
                               </div>
                         </div>
                   </section>
             </main>
-            
       </div>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
